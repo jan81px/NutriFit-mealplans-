@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)), url("./bg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077A3;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+    height: 60px;
+}
+
+.logo {
+    height: 60px;
+    margin-right: auto; /* Pushes nav-links to the right */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 18px; /* Ensures all links have the same font size */
+    margin-right: 50px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Uniform font size */
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    width: 55%; 
+    margin: 100px auto 20px; 
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: calc(100% - 12px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    font-size: 16px;
+}
+.checkbox-group input {
+    width: 16px;
+    height: 16px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #0077A3;
+    color: white;
+}
+.hidden {
+    display: none;
+}
+/* Mobile & Tablet view */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077A3;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+}
+
+.logo {
+    height: 40px;
+}
+
+/* Hamburger stays hidden on desktop */
+.hamburger {
+    display: none;
+}
+
+/* Mobile & Tablet view */
+/* Mobile & Tablet view */
+@media screen and (max-width: 1024px) {
+    .hamburger {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        margin-right: 90px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background-color: #0077A3;
+        position: absolute;
+        top: 60px; /* below navbar */
+        left: 0;
+        width: 100%;
+        padding: 0 30px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .nav-links.show {
+        max-height: 500px; /* Adjust to fit your content */
+        transition: max-height 0.4s ease-in;
+    }
+
+    .nav-links a {
+        padding: 12px 0;
+        font-size: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+

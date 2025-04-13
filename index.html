@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriFit - Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./logo.png">
+</head>
+<body>
+    <nav>
+        <a href="https://nutrifit-homepage.netlify.app/">
+            <img src="./logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="hamburger" onclick="toggleMenu()" id="hamburgerIcon">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#" class="feedback">Feedback</a>
+            <a href="#" class="more-info">More Info</a>
+            <a href="#" class="meal-plans">Meal Plans</a>
+            <a href="#" class="meal-plans">Diets</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Personalized Weekly Meal Plan</h1>
+        <form id="mealForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+
+            <label>Allergies:</label>
+            <div class="checkbox-group" id="allergies">
+                <label><input type="checkbox" value="Seafood"> Seafood</label>
+                <label><input type="checkbox" value="Eggs"> Eggs</label>
+                <label><input type="checkbox" value="Dairy"> Dairy</label>
+                <label><input type="checkbox" value="Nuts"> Nuts</label>
+                <label><input type="checkbox" value="Gluten"> Gluten</label>
+                <label><input type="checkbox" value="Citrus"> Citrus</label>
+            </div>
+
+            <label>Food Preferences:</label>
+            <div class="checkbox-group" id="preferences">
+                <label><input type="checkbox" value="Vegetarian"> Vegetarian</label>
+                <label><input type="checkbox" value="Vegan"> Vegan</label>
+                <label><input type="checkbox" value="High-Protein"> High-Protein</label>
+                <label><input type="checkbox" value="Low-Carb"> Low-Carb</label>
+                <label><input type="checkbox" value="Keto"> Keto</label>
+            </div>
+
+            <label for="fitnessGoal">Fitness Goal:</label>
+            <select id="fitnessGoal">
+               <option value="weightLoss">Weight Loss</option>
+               <option value="muscleGain">Muscle Gain</option>
+               <option value="maintenance">Maintenance</option>
+               <option value="endurance">Endurance</option>
+               <option value="balanced">Balanced Diet</option>
+            </select>
+
+            <label for="mealsPerDay">Meals per day:</label>
+            <select id="mealsPerDay">
+                <option value="2">2 Meals</option>
+                <option value="3">3 Meals</option>
+                <option value="4">4 Meals</option>
+                <option value="5">5 Meals</option>
+                <option value="6">6 Meals</option>
+            </select>
+
+
+            <button type="submit" id="generateBtn">Generate Meal Plan</button>          
+
+        <div id="mealPlan" class="hidden">
+            <h2>Your Weekly Meal Plan</h2>
+            <table id="mealTable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Meal 1</th>
+                        <th>Meal 2</th>
+                        <th>Meal 3</th>
+                        <th>Meal 4</th>
+                        <th>Meal 5</th>
+                        <th>Meal 6</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
